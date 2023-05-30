@@ -9,7 +9,9 @@
     margin-top: 100px;
     margin-left:auto;
     margin-right: auto;
-    border: 2px solid black;
+    border: 2px solid black; 
+    text-align: center;  
+    font-size: Large;
 }
 
 .side-bar-left{
@@ -42,4 +44,6 @@
     grid-area: home-three;
     border-width: 2px 0px 0px 0px;   
 }
+
+
   
