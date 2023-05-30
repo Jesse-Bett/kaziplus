@@ -1,0 +1,45 @@
+#home{
+    display: grid;
+    grid-template-areas: 
+    'side-bar-left home-one'
+    'side-bar-left home-two'
+    'side-bar-left home-three';
+    width: 750px;
+    height: 600px;
+    margin-top: 100px;
+    margin-left:auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+
+.side-bar-left{
+    grid-area: side-bar-left;
+    width: 150px;
+    height:600px;
+    border-style:solid;
+    border-width: 0px 2px 0px 0px;  
+}
+
+
+.home-one,.home-two,.home-three{
+    height:200px;
+    width:600px;
+    border-style:solid;
+  }
+
+
+.home-one{
+    grid-area: home-one;
+    border-width: 0px 0px 2px 0px;  /* ensuring there are no overlapping borders causing overflow*/
+}
+
+.home-two{
+    grid-area: home-two;
+    border-width: 0px;    
+}
+
+.home-three{
+    grid-area: home-three;
+    border-width: 2px 0px 0px 0px;   
+}
+  
