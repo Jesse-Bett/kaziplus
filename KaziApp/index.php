@@ -1,51 +1,23 @@
 <?php    
-$servername = "localhost";
-$username = "root";
-$password = "kaziplus254";
-$database = "kazi_app";
 
-// Create a new MySQLi instance
-$mysqli = new mysqli($servername, $username, $password, $database);
-
-// Check the connection
-if ($mysqli->connect_error) {
-    die("Connection failed: " . $mysqli->connect_error);
-}
-
-// Connected successfully
-echo "Connected to the database.";
-
-
-
+include 'config.php'; // file with database connection.
 session_start();
-
 // logging in and session start.
-// Function to authenticate the user
-function authenticateUser($email, $password) {
-    // TODO: Implement your authentication logic here (e.g., querying a database)
 
-    // For demonstration purposes, let's assume the email and password are valid
-    $validEmail = 'kaziplus@gmail.com';
-    $validPassword = 'password123';
+    //  Implementing authentication logic 
+    $validEmail = mysqli_real_escape_string($conn,$_POST['email']);
+    $validPassword = mysqli_real_escape_string($conn,$_POST['password']);
 
-    if ($email === $validEmail && $password === $validPassword) {
-        
-        // Authentication successful
-        return true;
-        
-    } else {
-        // Authentication failed
-        return false;
-    }
-}
+   $sql = "SELECT * FROM Employee WHERE email = '$validEmail' AND password = MD5('$validPassword') ";
+   $result = mysqli_query($conn,$sql);
+   $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+   $active = $row['active'];
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Authenticate the user
-    if (authenticateUser($email, $password)) {
+   $count = mysqli_num_rows($result);
+      
+   // If result matched $myusername and $mypassword, table row must be 1 row
+   
+    if ($count == 1) {
         // Store the email in the session
         echo "authentication successful";
         $_SESSION['email'] = $email;
@@ -55,9 +27,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $errorMessage = 'Invalid email or password';
     }
-}  
 
+
+
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+}  
 ?>
+
+
+
+
+
 
 
 
@@ -98,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (isset($errorMessage)) { ?>
         <p><?php echo $errorMessage; ?></p>
     <?php } ?>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">       
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "POST">       
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
 

@@ -1,6 +1,10 @@
 <?php
    session_start();
+   include('config.php');
+
+  
 ?>
+
 
 
 
@@ -27,7 +31,7 @@
 
 </style>
 
-You are logged in as kaziplus,
+You are logged in,
 
 
 <form action="logout.php" method="POST">
@@ -39,7 +43,8 @@ You are logged in as kaziplus,
       <h2>Time Sheet</h2> <!-- Time Sheet Section  -->
       <form action="/action_page.php">
           <label for="projectName">Project Name:</label>
-          <input type="text" id="projectName" name="projectName"><br><br>
+         <select type="select" id="projectName" name="projectName"></select><br><br> 
+
   
           <label for="task">Task:</label>
           <input type="text" id="task" name="task"><br><br>
