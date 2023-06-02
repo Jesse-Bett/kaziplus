@@ -6,9 +6,11 @@ include('config.php');
 
 // Retrieve form data
 $projectName = $_POST['projectName']; // will be used to get the pid.
-$task = $_POST['task'];
+$unsafeTask = $_POST['task'];
+$task = htmlentities($unsafeTask); // sanitizing the input to prevent code injection.
+$unsafeComments = $_POST['comments'];
+$comments = htmlentities($unsafeComments); 
 $dateDone = $_POST['dateDone'];
-$comments = $_POST['comments'];
 
 // Variables to be used later
 $timeTaken;
@@ -34,14 +36,14 @@ $datetime2 = new DateTime($endDate);
 $interval = $datetime1->diff($datetime2);
 $timeTaken = ($interval->days * 24) + $interval->h;
 
-    
+
 // Preparing an insert statement.
 $sql = "INSERT INTO Task (eid, pid, date_done, task, time_taken, comments) VALUES ('$eid', '$pid','$dateDone', '$task','$timeTaken', '$comments')";
 
 // Executing the statement.
 if ($conn->query($sql) === TRUE) {
     // data inserted successfully, redirect to the home page.
-     header("Location: home.php");  
+      header("Location: home.php");  
 } else {
    echo "Error: " . $sql . "<br>" . $conn->error;
 }
