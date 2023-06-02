@@ -33,7 +33,6 @@ $ git clone https://github.com/Jesse-Bett/kaziplus.git
 - ``` harrykane@gmail.com``` - ```harryscores```
 -  ```braut@gmail.com``` - ```goldenboot```
     
-- Run all the queries in ``` queries.sql ``` which is in the root folder of the repository. The queries are for creating the database and tables, while also populating tables.
 
 ## Database Design.
 
