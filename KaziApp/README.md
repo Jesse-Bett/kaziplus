@@ -17,15 +17,24 @@ $ git clone https://github.com/Jesse-Bett/kaziplus.git
 
 - Ensure you have php, xampp and mysql installed.
 
-- Run all the queries in ``` queries.sql ``` which is in the root folder of the repository. The queries are for creating the database and tables, while also populating tables.
+- In **phpMyAdmin**, Run all the queries in ``` queries.sql ```  which is in the root folder of the repository. The queries are for creating the database and tables, and also populating tables. The passwords are hashed by **MD5** before being inserted to the database.
 
 ## Running the App.
 
-- To run the app, move the ``` KaziApp ``` folder to ``` htdocs ``` directory so that it will be detected by xampp.
+- To run the app, move the **KaziApp** folder to **htdocs** directory so that it will be detected by xampp.
 
-- Start xampp and ensure that both ``` mysql ``` and  ``` Apache ``` servers are running.
+- Start xampp and ensure that both **mysql** and  **Apache** servers are running.
 
 - Head  over to your browser and type  ``` http://localhost/KaziApp ``` on the URl searchbar, the web app should be visible.
+
+
+- To **Log In** there are currently three users in the database and according to the queries you have run in queries.sql, their cridentials for email and password respectively are:
+- ```pep@gmail.com``` - ```trebble123```
+- ``` harrykane@gmail.com``` - ```harryscores```
+-  ```braut@gmail.com``` - ```goldenboot```
+    
+- Run all the queries in ``` queries.sql ``` which is in the root folder of the repository. The queries are for creating the database and tables, while also populating tables.
+
 ## Database Design.
 
 - Employee database.
@@ -61,10 +70,20 @@ $ git clone https://github.com/Jesse-Bett/kaziplus.git
 |  pid  (Foreign Key)| INT     |
 | date_done|DATE   |
 | task|VARCHAR(55)    |
-|time_taken|INT (hours)        |
+|time_taken (hours)|INT         |
 |comments|VARCHAR(255)        |
 
 
 
 
+
+
+## Screenshots.
+
+- Log In page.
+ ![LogIn Page](https://github.com/Jesse-Bett/kaziplus/assets/40341693/0ce14f53-e94a-49b1-97c0-c9f680a12c80)
+
+
+- Home Page.
+ ![Home Page](https://github.com/Jesse-Bett/kaziplus/assets/40341693/f4e78adb-a30e-4df2-b5cb-5489dde711db)
 
