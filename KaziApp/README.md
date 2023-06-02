@@ -80,9 +80,13 @@ $ git clone https://github.com/Jesse-Bett/kaziplus.git
 ## Screenshots.
 
 - Log In page.
+
+
  ![LogIn Page](https://github.com/Jesse-Bett/kaziplus/assets/40341693/0ce14f53-e94a-49b1-97c0-c9f680a12c80)
 
 
 - Home Page.
+
+
  ![Home Page](https://github.com/Jesse-Bett/kaziplus/assets/40341693/f4e78adb-a30e-4df2-b5cb-5489dde711db)
 
