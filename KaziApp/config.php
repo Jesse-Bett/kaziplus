@@ -1,6 +1,6 @@
-
-
 <?php
+// Purpose: To connect to the database
+
 $hostName= "localhost";
 $userName = "root";
 $password = "";
@@ -13,6 +13,7 @@ if(mysqli_connect_errno()){
     echo "failed To Connect!";
     exit(); 
  }
+ 
 ?>
 
 
