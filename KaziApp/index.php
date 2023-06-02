@@ -31,8 +31,8 @@ session_start();
         header("Location: home.php");
         exit();
     }
-    else {
-        $errorMessage = 'Invalid email or password';
+    else if ($count != 1 && $_SERVER['REQUEST_METHOD'] === 'POST') {
+       $errorMessage = 'Invalid email or password';
     }
 
 
