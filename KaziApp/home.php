@@ -42,8 +42,9 @@
 
 #comments{
   width: 400px;
-  height: 50px;
+  height: 90px;
   margin-bottom: 12px;
+  border: 2px solid #2A2F34;
 }
 
 #logout{
@@ -123,7 +124,7 @@
           <input type="text" id="task" name="task" required><br><br>
 
           <label for="comments">Comment:</label> 
-          <input type="text" id="comments" name="comments" required><br><br>
+          <textarea name="comments" id="comments" placeholder = "Enter comments here..." id="comments" name="comments" required></textarea><br><br>
   
           <label for="dateDone">Date Done:</label>
           <input type="date" id="dateDone" name="dateDone" required><br><br>
