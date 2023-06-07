@@ -4,6 +4,13 @@
 
    session_start();
    include('config.php');
+
+   // Check if the user is not logged in
+    if (!isset($_SESSION['eid']) || $_SESSION['loggedIn'] !== true) {
+    // Redirect the user to the login page or display an error message
+    header("Location: index.php");
+    exit;
+  }
     
    // query to get all project names from Projects table.
    $sql = "SELECT project_name FROM Projects";
