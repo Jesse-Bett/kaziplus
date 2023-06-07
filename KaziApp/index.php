@@ -26,6 +26,8 @@ session_start();
         echo "authentication successful";
         $_SESSION['eid'] = $eid;// will be used for reference in the database as foreign key, in insert.php.
         $_SESSION['first_name'] = $firstName;
+        $loggedIn = true;
+        $_SESSION['loggedIn'] = $loggedIn;  // will be used to check if the user is logged in or not.
         
         // Redirect to the home page
         header("Location: home.php");
